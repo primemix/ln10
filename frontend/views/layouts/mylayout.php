@@ -30,10 +30,10 @@ AppAsset::register($this);
         <div class="nav-wrapper">
             <a href="<?= Url::to('/') ?>" class="brand-logo">Logo</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/university">University</a></li>
-                <li><a href="/department">Department</a></li>
-                <li><a href="/teacher">Teachers</a></li>
-                <li><a href="/student">Students</a></li>
+                <li><a href="<?=Url::toRoute('/university'); ?>"><?= Yii::t('common', 'University') ?></a></li>
+                <li><a href="<?=Url::toRoute('/department'); ?>"><?= Yii::t('common', 'Department') ?></a></li>
+                <li><a href="<?=Url::toRoute('/teacher'); ?>"><?= Yii::t('common', 'Teachers') ?></a></li>
+                <li><a href="<?=Url::toRoute('/student'); ?>"><?= Yii::t('common', 'Students') ?></a></li>
             </ul>
         </div>
     </nav>
@@ -65,7 +65,7 @@ AppAsset::register($this);
     </div>
     <div class="footer-copyright">
         <div class="container">
-            © 2017 Copyright Text
+            <p class="pull-left">&copy; My Company <?= date('Y') ?> | <?= $this->render('main/select-language') ?></p>
             <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
         </div>
     </div>
