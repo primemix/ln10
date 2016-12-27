@@ -13,7 +13,8 @@ return [
     'bootstrap' => ['log'],
     'layout' => 'mylayout',
     'defaultRoute' => 'main/index',
-    'language' => 'ru_RU',
+    'sourceLanguage' => 'en',
+    'language' => 'en',
     'charset' => 'UTF-8',
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
@@ -42,9 +43,20 @@ return [
             'errorAction' => 'site/error',
         ],
         'urlManager' => [
+            'class' => 'codemix\localeurls\UrlManager',
+            'languages' => ['ru', 'en'],
+            'enableDefaultLanguageUrlCode' => true,
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+            ],
+        ],
+        'i18n' => [
+            'translations' => [
+                'common*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages',
+                ],
             ],
         ],
     ],
